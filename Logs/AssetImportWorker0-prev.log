@@ -15,11 +15,11 @@ E:/Respaldo_UPSLP/Topicos/Unity/Crossing-Coronel-Romero
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52522
+55292
 Successfully changed project path to: E:/Respaldo_UPSLP/Topicos/Unity/Crossing-Coronel-Romero
 E:/Respaldo_UPSLP/Topicos/Unity/Crossing-Coronel-Romero
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 69.39 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 26.79 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.0f1 (c7b5465681fb)
 [Subsystems] Discovering subsystems at path E:/Respaldo_UPSLP/Topicos/Unity/Editor/Data/Resources/UnitySubsystems
@@ -35,176 +35,88 @@ Initialize mono
 Mono path[0] = 'E:/Respaldo_UPSLP/Topicos/Unity/Editor/Data/Managed'
 Mono path[1] = 'E:/Respaldo_UPSLP/Topicos/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'E:/Respaldo_UPSLP/Topicos/Unity/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56124
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56984
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/Respaldo_UPSLP/Topicos/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001218 seconds.
+Registered in 0.000954 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 50.80 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 26.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.346 seconds
+- Completed reload, in  0.776 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000716 seconds.
+Registered in 0.000529 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.164 seconds
+- Completed reload, in  0.695 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.18 seconds
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1128 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 61.0 MB.
+System memory in use before: 61.1 MB.
 System memory in use after: 61.1 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1577.
-Total: 2.657900 ms (FindLiveObjects: 0.150100 ms CreateObjectMapping: 0.043500 ms MarkObjects: 2.380700 ms  DeleteObjects: 0.081900 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1579.
+Total: 1.492300 ms (FindLiveObjects: 0.132300 ms CreateObjectMapping: 0.039700 ms MarkObjects: 1.256100 ms  DeleteObjects: 0.063400 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerWhite.prefab
-  artifactKey: Guid(e0b186a53bbd65f498681cafa278d094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerWhite.prefab using Guid(e0b186a53bbd65f498681cafa278d094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ec562223ab25c9918e60fd91e033532') in 0.282842 seconds
-  Import took 0.286082 seconds .
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(b64eadece603dad4db7f4244ece710d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(b64eadece603dad4db7f4244ece710d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f24719f19480d9db1a45d25359ac205') in 0.041855 seconds
+  Import took 0.083587 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000682 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerFlame-1.prefab
-  artifactKey: Guid(9a8ab42d6f1b3a94e92fe881e0e867c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerFlame-1.prefab using Guid(9a8ab42d6f1b3a94e92fe881e0e867c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '701accc8d19158a79486614096b7ae26') in 0.030856 seconds
-  Import took 0.033211 seconds .
+  Time since last request: 0.001082 seconds.
+  path: Assets/Scenes/Menu.unity
+  artifactKey: Guid(e86a2e277dbeccc46a7a5549a8ef1fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu.unity using Guid(e86a2e277dbeccc46a7a5549a8ef1fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19ecf032b139b6108fb6930d0a5dc69e') in 0.001791 seconds
+  Import took 0.011688 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000722 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerDoubleShine.prefab
-  artifactKey: Guid(339ec13e94b70ca469275f6f7e29bac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerDoubleShine.prefab using Guid(339ec13e94b70ca469275f6f7e29bac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a055fad0660044149dc74364fcf5a22') in 0.012427 seconds
-  Import took 0.014997 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000510 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerYellowEuro.prefab
-  artifactKey: Guid(f9f38f77edcc4364bbe69808863d0c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerYellowEuro.prefab using Guid(f9f38f77edcc4364bbe69808863d0c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '775ac4054c31b277459c885bcbbb84b6') in 0.016393 seconds
-  Import took 0.019259 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000461 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerDoubleSpark-1.prefab
-  artifactKey: Guid(3ac3af0756bb3654690122060f9cef08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerDoubleSpark-1.prefab using Guid(3ac3af0756bb3654690122060f9cef08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a70b1824643c8f9735279274bc5a8172') in 0.012673 seconds
-  Import took 0.015379 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000498 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerBlueFlame.prefab
-  artifactKey: Guid(f10a79f37ff522b4280e2844332bef77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerBlueFlame.prefab using Guid(f10a79f37ff522b4280e2844332bef77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e87e44b7a77df5661b45680cda4ff1b9') in 0.011619 seconds
-  Import took 0.014066 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000555 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerYellow.prefab
-  artifactKey: Guid(0c6c6a0e9df04f341be96e061ddbf145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerYellow.prefab using Guid(0c6c6a0e9df04f341be96e061ddbf145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c1049ef023c20f38a6d8f4074913d2f') in 0.014953 seconds
-  Import took 0.017792 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000502 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerDoubleSpark-2.prefab
-  artifactKey: Guid(8f2875655f485be4d8438962a9d306bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerDoubleSpark-2.prefab using Guid(8f2875655f485be4d8438962a9d306bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '411712eedc03216d04704608795c1954') in 0.015565 seconds
-  Import took 0.018577 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000578 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerYellowDollar.prefab
-  artifactKey: Guid(f832b09c86bd81e4f91beb978de1ae75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerYellowDollar.prefab using Guid(f832b09c86bd81e4f91beb978de1ae75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '874b0caf48976a709622ef2f7a1dac9e') in 0.020048 seconds
-  Import took 0.024877 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000660 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerBlue.prefab
-  artifactKey: Guid(0b96cfde923514d4f94409c375d99959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerBlue.prefab using Guid(0b96cfde923514d4f94409c375d99959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a55b5ffb478dea363af4eb71350c05f7') in 0.018844 seconds
-  Import took 0.022219 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000583 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerElectricSpark.prefab
-  artifactKey: Guid(034e51e6d8986d04795f48b487231687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerElectricSpark.prefab using Guid(034e51e6d8986d04795f48b487231687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f902d959db853fd20139bb20176bfd5c') in 0.018972 seconds
-  Import took 0.022383 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000722 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerGreen.prefab
-  artifactKey: Guid(aaf860cd8993a6c4b984c97449417579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerGreen.prefab using Guid(aaf860cd8993a6c4b984c97449417579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a211bca48dac3781418d21b93126793f') in 0.018656 seconds
-  Import took 0.022062 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000620 seconds.
-  path: Assets/PowerUp/Prefabs/PowerUpContainerRed.prefab
-  artifactKey: Guid(879451a5e2214f143a7edf5dd3e32020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs/PowerUpContainerRed.prefab using Guid(879451a5e2214f143a7edf5dd3e32020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae6751f575a2639fba4b106c9f950e88') in 0.017764 seconds
-  Import took 0.020994 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000641 seconds.
-  path: Assets/PowerUp/Prefabs
-  artifactKey: Guid(6547ba83db6b4094096ae4ff3fc0fc7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PowerUp/Prefabs using Guid(6547ba83db6b4094096ae4ff3fc0fc7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dade7cfb8f1197286aef03447dd6c2e8') in 0.003162 seconds
-  Import took 0.007126 seconds .
+  Time since last request: 0.293705 seconds.
+  path: Assets/Scenes/Menu.unity
+  artifactKey: Guid(e86a2e277dbeccc46a7a5549a8ef1fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu.unity using Guid(e86a2e277dbeccc46a7a5549a8ef1fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19ecf032b139b6108fb6930d0a5dc69e') in 0.002080 seconds
+  Import took 0.003994 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001024 seconds.
+Registered in 0.000530 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.31 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.025 seconds
+- Completed reload, in  0.655 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1118 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.1 MB.
-System memory in use after: 64.2 MB.
+System memory in use before: 60.6 MB.
+System memory in use after: 60.7 MB.
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1591.
-Total: 2.989300 ms (FindLiveObjects: 0.172100 ms CreateObjectMapping: 0.055300 ms MarkObjects: 2.736200 ms  DeleteObjects: 0.023800 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1582.
+Total: 1.315800 ms (FindLiveObjects: 0.114300 ms CreateObjectMapping: 0.030700 ms MarkObjects: 1.159000 ms  DeleteObjects: 0.010900 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
