@@ -16,15 +16,19 @@ public class MainPannel : MonoBehaviour
     [Header("Panels")]
     public GameObject optionsPanel;
     public GameObject mainPanel;
+    public GameObject cheatPanel;
+    
 
     public void OpenPanel(GameObject panel){
         mainPanel.SetActive(false);
         optionsPanel.SetActive(false);
         panel.SetActive(true);
+        
     }
 
     void Start(){
         optionsPanel.SetActive(false);
+        cheatPanel.SetActive(false);
     }
 
     public void ChangeMasterVolume(float masterVol){
@@ -52,4 +56,6 @@ public class MainPannel : MonoBehaviour
             mix.SetFloat("VolMaster", lastvol);
         }
     }
+
+    
 }
