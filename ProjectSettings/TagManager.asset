@@ -6,6 +6,8 @@ TagManager:
   tags:
   - River1
   - River2
+  - Vehicle
+  - Food
   layers:
   - Default
   - TransparentFX

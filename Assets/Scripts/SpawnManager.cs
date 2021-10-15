@@ -13,7 +13,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float spawnInterval = Random.Range(3, 6);
+        float spawnInterval = Random.Range(7, 14);
         InvokeRepeating("SpawnVehicles", startDelay, spawnInterval);
     }
 
