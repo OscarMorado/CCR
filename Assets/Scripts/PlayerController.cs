@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public AudioClip moving;
+    public AudioClip nextLevelSound;
     private Rigidbody playerRb;
     private AudioSource audio;
     private Animator playerAnim;
+    public ParticleSystem winParticle;
     private ScoreManager scoreManagerScript;//score variable
     //limits:
     private float limitZMax = -742.0f;
@@ -15,7 +17,8 @@ public class PlayerController : MonoBehaviour
     private float limitXMax = 399.0f;
     private float limitXMin = 301.0f;
     public bool isOnRiver;
-    public bool gameOver;
+    public bool gameOver = false;
+    public bool nextStage = false;//Booleano para determinar si se alcanzo la meta
     public ParticleSystem food;
     public ParticleSystem death;
     public ParticleSystem crash;
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         }else if(Input.GetKeyDown(KeyCode.S) && !gameOver && transform.position.z>limitZMin){
             //decrease the score:
-            scoreManagerScript.score-=1;
+            scoreManagerScript.score-=2;
             transform.Translate(Vector3.back);
             //playerAnim.SetTrigger("Jump_trig");
             audio.PlayOneShot(moving, 1.0f);
@@ -66,9 +69,19 @@ public class PlayerController : MonoBehaviour
         }else if(collision.gameObject.CompareTag("Food")){
             Destroy(collision.gameObject);
             food.Play();
+        }else if (collision.gameObject.CompareTag("GroundIsland"))//Condicion que determina la victoria
+        {
+            nextStage = true; //Variable bool para ir al siguiente nive
+            gameOver = true;
+            audio.PlayOneShot(nextLevelSound, 1.0f);//Cancion cuando se alanza el objetivo
+            Debug.Log("Alcanzaste la meta");
+            playerAnim.SetBool("Win_b", true);//Animacion
+            playerAnim.SetInteger("WinType_int",1);
+            winParticle.Play();
+            Destroy(collision.gameObject);//Se destruye el objetivo
         }
-        
-        if(collision.gameObject.CompareTag("River1") || collision.gameObject.CompareTag("River2")){
+
+        if (collision.gameObject.CompareTag("River1") || collision.gameObject.CompareTag("River2")){
             //Player dies 
         }
     }
