@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private ScoreManager scoreManagerScript;//score variable
     //limits:
     private float limitZMax = -742.0f;
-    private float limitZMin = -839.0f;
+    private float limitZMin = -838.0f;
     private float limitXMax = 399.0f;
     private float limitXMin = 301.0f;
     public bool isOnRiver;
