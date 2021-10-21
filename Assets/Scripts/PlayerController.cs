@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private AudioSource audio;
     private Animator playerAnim;
+    private ScoreManager scoreManagerScript;
     public bool isOnRiver;
     public bool gameOver;
     public ParticleSystem food;
@@ -19,12 +20,16 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
+        scoreManagerScript =GameObject.Find("Score").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.W) && !gameOver){
+            //increase the score:
+            scoreManagerScript.score+=1;
+
             transform.Translate(Vector3.forward);
             //playerAnim.SetTrigger("Jump_trig");
             audio.PlayOneShot(moving, 1.0f);
