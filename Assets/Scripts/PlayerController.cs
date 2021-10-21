@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
             //playerAnim.SetTrigger("Jump_trig");
             audio.PlayOneShot(moving, 1.0f);
         }else if(Input.GetKeyDown(KeyCode.S) && !gameOver){
+            //decrease the score:
+            scoreManagerScript.score-=1;
+            
             transform.Translate(Vector3.back);
             //playerAnim.SetTrigger("Jump_trig");
             audio.PlayOneShot(moving, 1.0f);
