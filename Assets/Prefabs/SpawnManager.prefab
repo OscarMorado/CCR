@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &508861373004184568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508861373004184570}
+  - component: {fileID: 508861373004184569}
+  - component: {fileID: 508861373004184571}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &508861373004184570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508861373004184568}
+  m_LocalRotation: {x: 1.7112914e-15, y: 1, z: -0.000000021855694, w: 0.0000000754979}
+  m_LocalPosition: {x: 353.23, y: 3.7, z: -747.77}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &508861373004184569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508861373004184568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0820e49062696f4f90669bca6f77cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehiclePrefabs:
+  - {fileID: 2349508081695130686, guid: a13f4c7b27b68754d8eb514ed47622e3, type: 3}
+  - {fileID: 6945198277849562254, guid: 407b84ff0b359ea4f9d6d9327b6315f8, type: 3}
+  - {fileID: 496871903370793276, guid: 941a6df56632e8d4c91312797fe55e1d, type: 3}
+  - {fileID: 1524371651724129198, guid: 838f4bdec00d8354c9793ab4c62a3700, type: 3}
+  - {fileID: 898237764950491812, guid: e4ae7722a2517a240b5112f310c66b12, type: 3}
+  - {fileID: 2432731604261586146, guid: 21469d89f7235ad41b1dbd293fe3ccc6, type: 3}
+  - {fileID: 5961121522199874060, guid: 847bbc4e24d1bd74384d0b61a9d119c9, type: 3}
+  - {fileID: 5774496701540814522, guid: 92f5e9049091f024bb03f136c05e7559, type: 3}
+  islandPrefabs:
+  - {fileID: 8500292226000847897, guid: 97d83c6104b911d4fb3fb9f3a05248e2, type: 3}
+  - {fileID: 4114564123069187794, guid: f8317b0973ce0404191432a02c116d17, type: 3}
+  - {fileID: 597451137774620800, guid: 0a8e4c413a1bbe645bc5816d998ce81b, type: 3}
+  - {fileID: 9108739520300430655, guid: 06ba2e1e43e58f243ada69068be5610c, type: 3}
+  - {fileID: 1360812803362753683, guid: b150fe5b0101af84f9df18415c1d29ea, type: 3}
+  islandPrefabs2:
+  - {fileID: 6593758758076955350, guid: b0d79d1402c26fa47afab61285fb5bbf, type: 3}
+--- !u!114 &508861373004184571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508861373004184568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0820e49062696f4f90669bca6f77cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehiclePrefabs: []
+  islandPrefabs: []
+  islandPrefabs2: []

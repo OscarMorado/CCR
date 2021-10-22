@@ -9,7 +9,7 @@ public class SpawnManagerRoad1 : MonoBehaviour
     private int minTime = 3;
     private int maxTime = 9;
     private float spaceBetweenCars=4.0f;//space between cars
-    private float diffPosX = 300-398;//difference between initial and last position.
+    private float diffPosX = 80;//difference between initial and last position.
     
 
     void Start()
