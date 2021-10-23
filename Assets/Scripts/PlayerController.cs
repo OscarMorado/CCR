@@ -41,8 +41,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.W) && !gameOver && transform.position.z<limitZMax){   
-            scoreManagerScript.score+=1;
-            transform.Translate(Vector3.forward);
+            transform.Translate(Vector3.forward);//avanzar 1 unidad en z
+            if(transform.position.z-lastPositionZ>=1){//cada que se presiona la w debe aumentar su posicion en z para sumar
+                scoreManagerScript.score+=1;
+                lastPositionZ=transform.position.z;
+            }
             //playerAnim.SetTrigger("Jump_trig");
             audio.PlayOneShot(moving, 1.0f);
         }else if(Input.GetKeyDown(KeyCode.S) && !gameOver && transform.position.z>limitZMin){
@@ -65,15 +68,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void resetPosition(){
+        scoreManagerScript.lastScore=scoreManagerScript.score;
+        scoreManagerScript.score=0;
+        transform.position=startPosition;//regresa a la posicion inicial al player
+        lastPositionZ=startPosition.z;
+    }
     private void OnCollisionEnter(Collision collision){
         if(collision.gameObject.CompareTag("Vehicle")){
             crash.Play();
-              Debug.Log("NOFrente");
-            //scoreManagerScript.score-=1;
-            scoreManagerScript.lastScore=scoreManagerScript.score;
-            scoreManagerScript.score=0;
-            transform.position=startPosition;//regresa a la posicion inicial al player
-
+            resetPosition();
             //Si la vida llega a 0, que el jugador desaparezca, no hay animación de muerte
         }else if(collision.gameObject.CompareTag("Food")){
             Destroy(collision.gameObject);
