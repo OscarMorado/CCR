@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (collision.gameObject.CompareTag("River1") || collision.gameObject.CompareTag("River2")){
-            //Player dies 
+            resetPosition();
         }
 
         

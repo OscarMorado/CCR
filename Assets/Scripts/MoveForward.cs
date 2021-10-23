@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-
-    private float startDelay = 1.0f;
     private float speed = 5.0f;
     private float initXPos = 298.0f;
     private float endXPos = 400.0f;
