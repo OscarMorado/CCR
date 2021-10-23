@@ -9,6 +9,8 @@ TagManager:
   - Vehicle
   - Food
   - GroundIsland
+  - frontCar
+  - obstacle
   layers:
   - Default
   - TransparentFX

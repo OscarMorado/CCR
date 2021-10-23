@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
     public ParticleSystem winParticle;
     private ScoreManager scoreManagerScript;//score variable
+    public Vector3 startPosition;
     //limits:
     private float limitZMax = -742.0f;
     private float limitZMin = -838.0f;
@@ -22,9 +23,14 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem food;
     public ParticleSystem death;
     public ParticleSystem crash;
+
+    private float lastPositionZ;
     // Start is called before the first frame update
     void Start()
     {
+        lastPositionZ=transform.position.z;
+        startPosition = new Vector3(349.0727f,0,-838.4476f);
+        transform.position=startPosition;
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
@@ -34,14 +40,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W) && !gameOver && transform.position.z<limitZMax){
-            //increase the score:
+        if(Input.GetKeyDown(KeyCode.W) && !gameOver && transform.position.z<limitZMax){   
             scoreManagerScript.score+=1;
             transform.Translate(Vector3.forward);
             //playerAnim.SetTrigger("Jump_trig");
             audio.PlayOneShot(moving, 1.0f);
-        
-
         }else if(Input.GetKeyDown(KeyCode.S) && !gameOver && transform.position.z>limitZMin){
             //decrease the score:
             scoreManagerScript.score-=2;
@@ -65,6 +68,12 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision){
         if(collision.gameObject.CompareTag("Vehicle")){
             crash.Play();
+              Debug.Log("NOFrente");
+            //scoreManagerScript.score-=1;
+            scoreManagerScript.lastScore=scoreManagerScript.score;
+            scoreManagerScript.score=0;
+            transform.position=startPosition;//regresa a la posicion inicial al player
+
             //Si la vida llega a 0, que el jugador desaparezca, no hay animación de muerte
         }else if(collision.gameObject.CompareTag("Food")){
             Destroy(collision.gameObject);
@@ -84,5 +93,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("River1") || collision.gameObject.CompareTag("River2")){
             //Player dies 
         }
+
+        
+        
     }
+
+   
+
 }

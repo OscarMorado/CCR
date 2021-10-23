@@ -7,9 +7,11 @@ public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
     public Text timeText;
-    public int score=10;
-    public float time=10;
+    public int score=0;
+    public int lastScore=0;
+    public float time=60;
     private bool timerIsRunning=false;
+
 
 
     void Start()
@@ -22,7 +24,13 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = "SCORE: "+ score.ToString();
+        //150>0 
+        if(score<lastScore ){
+            scoreText.text = "SCORE: "+ lastScore.ToString();
+        }else{
+            scoreText.text = "SCORE: "+ score.ToString();
+        }
+
         timeText.text= "TIME: "+Mathf.FloorToInt(time % 60).ToString();
          if (timerIsRunning){
             if (time > 0){
