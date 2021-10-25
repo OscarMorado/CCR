@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.CompareTag("Vehicle")){
             crash.Play();
             resetPosition();
+            scoreManagerScript.heartCounter -= 1;
             //Si la vida llega a 0, que el jugador desaparezca, no hay animación de muerte
         }else if(collision.gameObject.CompareTag("Food")){
             Destroy(collision.gameObject);
@@ -96,6 +97,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("River1") || collision.gameObject.CompareTag("River2")){
             resetPosition();
+            scoreManagerScript.heartCounter -= 1;
         }
 
         
