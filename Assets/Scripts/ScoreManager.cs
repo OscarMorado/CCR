@@ -9,10 +9,9 @@ public class ScoreManager : MonoBehaviour
     public Text timeText;
     public int score=0;
     public int lastScore=0;
-    public float time=60;
+    public static float time=60;
     private bool timerIsRunning=false;
-
-
+    
 
     void Start()
     {
@@ -30,8 +29,8 @@ public class ScoreManager : MonoBehaviour
         }else{
             scoreText.text = "SCORE: "+ score.ToString();
         }
-
-        timeText.text= "TIME: "+Mathf.FloorToInt(time % 60).ToString();
+        
+        timeText.text= "TIME: " + time.ToString("f0");
          if (timerIsRunning){
             if (time > 0){
                 time -= Time.deltaTime;

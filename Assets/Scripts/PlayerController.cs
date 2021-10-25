@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip moving;
     public AudioClip nextLevelSound;
     private Rigidbody playerRb;
-    private AudioSource audio;
+    private AudioSource audioeffects;
     private Animator playerAnim;
     public ParticleSystem winParticle;
     private ScoreManager scoreManagerScript;//score variable
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         transform.position=startPosition;
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
+        audioeffects = GetComponent<AudioSource>();
         scoreManagerScript =GameObject.Find("Score").GetComponent<ScoreManager>();
     }
 
@@ -47,23 +47,23 @@ public class PlayerController : MonoBehaviour
                 lastPositionZ=transform.position.z;
             }
             //playerAnim.SetTrigger("Jump_trig");
-            audio.PlayOneShot(moving, 1.0f);
+            audioeffects.PlayOneShot(moving, 1.0f);
         }else if(Input.GetKeyDown(KeyCode.S) && !gameOver && transform.position.z>limitZMin){
             //decrease the score:
             scoreManagerScript.score-=2;
             transform.Translate(Vector3.back);
             //playerAnim.SetTrigger("Jump_trig");
-            audio.PlayOneShot(moving, 1.0f);
+            audioeffects.PlayOneShot(moving, 1.0f);
             
         }else if(Input.GetKeyDown(KeyCode.A) && !gameOver && transform.position.x>limitXMin){
             transform.Translate(Vector3.left);
             //playerAnim.SetTrigger("Jump_trig");
-            audio.PlayOneShot(moving, 1.0f);
+            audioeffects.PlayOneShot(moving, 1.0f);
             
         }else if(Input.GetKeyDown(KeyCode.D) && !gameOver && transform.position.x<limitXMax){
             transform.Translate(Vector3.right);
             //playerAnim.SetTrigger("Jump_trig");
-            audio.PlayOneShot(moving, 1.0f);
+            audioeffects.PlayOneShot(moving, 1.0f);
         
         }
     }
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         {
             nextStage = true; //Variable bool para ir al siguiente nive
             gameOver = true;
-            audio.PlayOneShot(nextLevelSound, 1.0f);//Cancion cuando se alanza el objetivo
+            audioeffects.PlayOneShot(nextLevelSound, 1.0f);//Cancion cuando se alanza el objetivo
             Debug.Log("Alcanzaste la meta");
             playerAnim.SetBool("Win_b", true);//Animacion
             playerAnim.SetInteger("WinType_int",1);
