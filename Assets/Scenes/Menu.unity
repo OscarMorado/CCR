@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.613208, g: 0.69252014, b: 0.7452185, a: 1}
+  m_IndirectSpecularColor: {r: 0.61350805, g: 0.69269174, b: 0.745596, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4396,8 +4396,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1000484824}
   m_HandleRect: {fileID: 1000484823}
   m_Direction: 2
-  m_Value: 1.0000312
-  m_Size: 0.89881253
+  m_Value: 0.99999934
+  m_Size: 0.8988778
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6167,7 +6167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.499999, y: -3.4515555}
+  m_AnchoredPosition: {x: -8.49999, y: -3.4508078}
   m_SizeDelta: {x: 165, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1189508253
@@ -7685,8 +7685,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 82552701}
   m_HandleRect: {fileID: 82552700}
   m_Direction: 2
-  m_Value: 1.0000312
-  m_Size: 0.89881253
+  m_Value: 0.99999934
+  m_Size: 0.8988778
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8846,7 +8846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.499994, y: -3.4515555}
+  m_AnchoredPosition: {x: -8.49999, y: -3.4508078}
   m_SizeDelta: {x: 165, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1858619382
@@ -9847,7 +9847,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 38df2588569db254d8f1bcf674a0c749, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9856,7 +9856,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2
 --- !u!222 &2122713483
 CanvasRenderer:
   m_ObjectHideFlags: 0
