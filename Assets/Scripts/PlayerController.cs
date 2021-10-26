@@ -83,7 +83,9 @@ public class PlayerController : MonoBehaviour
         }else if(collision.gameObject.CompareTag("Food")){
             Destroy(collision.gameObject);
             food.Play();
-        }else if (collision.gameObject.CompareTag("GroundIsland"))//Condicion que determina la victoria
+            scoreManagerScript.heartCounter += 1;
+        }
+        else if (collision.gameObject.CompareTag("GroundIsland"))//Condicion que determina la victoria
         {
             nextStage = true; //Variable bool para ir al siguiente nive
             gameOver = true;
