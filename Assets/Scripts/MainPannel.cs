@@ -90,6 +90,10 @@ public class MainPannel : MonoBehaviour
         PlaySoundButton();
     }
 
+    public void ExitGame(){
+        Application.Quit();
+    }
+
     public void CheatCode(string cheat){
         if(holder.text == "Cascadia"){
             fxSource.PlayOneShot(Acceptance);
