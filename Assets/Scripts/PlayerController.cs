@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private ScoreManager scoreManagerScript;//score variable
     public Vector3 startPosition;
     //limits:
-    private float limitZMax = -742.0f;
+    private float limitZMax = -710.0f;
     private float limitZMin = -838.0f;
     private float limitXMax = 399.0f;
     private float limitXMin = 301.0f;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         lastPositionZ=transform.position.z;
-        startPosition = new Vector3(349.0727f,0,-838.4476f);
+        startPosition = new Vector3(349.0727f,0,-838.4476f);//posicion inicial del player
         transform.position=startPosition;
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
