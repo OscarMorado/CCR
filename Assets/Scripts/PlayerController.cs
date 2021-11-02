@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem food;
     public ParticleSystem death;
     public ParticleSystem crash;
-
     private float lastPositionZ;
     // Start is called before the first frame update
     void Start()
@@ -84,6 +83,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             food.Play();
             scoreManagerScript.heartCounter += 1;
+            ScoreManager.time -= 3;
         }
         else if (collision.gameObject.CompareTag("GroundIsland"))//Condicion que determina la victoria
         {
@@ -100,12 +100,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("River1") || collision.gameObject.CompareTag("River2")){
             resetPosition();
             scoreManagerScript.heartCounter -= 1;
-        }
-
-        
-        
+        }        
     }
-
-   
-
 }

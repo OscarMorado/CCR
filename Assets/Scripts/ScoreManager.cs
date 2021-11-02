@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -14,8 +15,8 @@ public class ScoreManager : MonoBehaviour
 
     public RawImage heart1, heart2, heart3, heart4, heart5;
     public int heartCounter = 5;
-    
-
+    private SceneTransitions transition;
+    private SceneManager manager;
     void Start()
     {
         timerIsRunning=true;
@@ -44,8 +45,8 @@ public class ScoreManager : MonoBehaviour
             }
         }
         HeartDisappear();
+        Death();
     }
-
     void HeartDisappear()
     {
         if (heartCounter == 5){
@@ -83,13 +84,30 @@ public class ScoreManager : MonoBehaviour
             heart2.enabled = false;
             heart1.enabled = true;
         }
-        else if (heartCounter == 0){
+        else if (heartCounter == 0 || time == 0){
             heart5.enabled = false;
             heart4.enabled = false;
             heart3.enabled = false;
             heart2.enabled = false;
             heart1.enabled = false;
         }
+        
+    }
+
+    public void Death(){
+        
+        if(heartCounter == 0 || time == 0){
+            
+            SceneManager.LoadScene("Menu");
+            heartCounter = 6;
+            time = 1;
+
+        }
+    }
+            
+
+    IEnumerator Deathtimer(){
+        yield return new WaitForSeconds(5f*Time.deltaTime);
         
     }
 }

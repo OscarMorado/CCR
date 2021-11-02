@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.61340016, g: 0.69260126, b: 0.7454722, a: 1}
+  m_IndirectSpecularColor: {r: 0.6134246, g: 0.6926517, b: 0.7453258, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -571,7 +571,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: e0613b796d91b434fbb165dd42778568, type: 2}
   m_audioClip: {fileID: 8300000, guid: c2b0e6565f4d9a34885100d05a0c5a59, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.401
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -701,6 +701,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1805984491398746550, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 677bf1b1a974532428d5286d998b9330, type: 3}
     - target: {fileID: 1805984491414300123, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -715,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805984491670446025, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.4507825
+      value: -4.6919074
       objectReference: {fileID: 0}
     - target: {fileID: 1805984491835468905, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -763,7 +767,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492071922848, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.4507825
+      value: -4.6924257
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805984492071922849, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
+      propertyPath: m_Text
+      value: 'There are two rivers, be careful not falling into the water or you''ll
+        lose a live!
+
+        You''ll need to use the platforms to cross'
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492128540535, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchorMax.x
@@ -781,6 +792,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1805984492196402868, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 407e2a1cc0b95ff40bc9b33302479f31, type: 3}
     - target: {fileID: 1805984492234708375, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -789,6 +804,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1805984492304851667, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b8f51b7f9bd1704eb648ed53f5761f0, type: 3}
     - target: {fileID: 1805984492360875556, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -881,6 +900,10 @@ PrefabInstance:
       propertyPath: fxSource
       value: 
       objectReference: {fileID: 534905801}
+    - target: {fileID: 1805984492972698146, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9662bce6727dde440b6aabecce10c71c, type: 3}
     - target: {fileID: 1805984493073878896, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_RootOrder
       value: 5
