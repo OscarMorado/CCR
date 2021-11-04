@@ -11,6 +11,7 @@ TagManager:
   - GroundIsland
   - frontCar
   - obstacle
+  - Transporter
   layers:
   - Default
   - TransparentFX
