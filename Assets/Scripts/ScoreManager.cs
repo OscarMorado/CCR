@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public Text timeText;
     public int score=0;
     public int lastScore=0;
-    public static float time=600;
+    public static float time=120;
     private bool timerIsRunning=false;
 
     public RawImage heart1, heart2, heart3, heart4, heart5;
