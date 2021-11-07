@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,10 +34,10 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         audioeffects = GetComponent<AudioSource>();
-        scoreManagerScript =GameObject.Find("Score").GetComponent<ScoreManager>();
+        scoreManagerScript = GameObject.Find("Score").GetComponent<ScoreManager>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.W) && !gameOver && transform.position.z<limitZMax){   
@@ -48,8 +49,7 @@ public class PlayerController : MonoBehaviour
             //playerAnim.SetTrigger("Jump_trig");
             audioeffects.PlayOneShot(moving, 1.0f);
         }else if(Input.GetKeyDown(KeyCode.S) && !gameOver && transform.position.z>limitZMin){
-            //decrease the score:
-            scoreManagerScript.score-=2;
+            scoreManagerScript.score-=2; //Se le resta puntaje para que no se puedan farmear puntos
             transform.Translate(Vector3.back);
             //playerAnim.SetTrigger("Jump_trig");
             audioeffects.PlayOneShot(moving, 1.0f);
@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
         transform.position=startPosition;//regresa a la posicion inicial al player
         lastPositionZ=startPosition.z;
     }
+
     private void OnCollisionEnter(Collision collision){
         if(collision.gameObject.CompareTag("Vehicle")){
             crash.Play();
@@ -84,22 +85,26 @@ public class PlayerController : MonoBehaviour
             food.Play();
             scoreManagerScript.heartCounter += 1;
             ScoreManager.time -= 3;
-        }
-        else if (collision.gameObject.CompareTag("GroundIsland"))//Condicion que determina la victoria
-        {
-            nextStage = true; //Variable bool para ir al siguiente nive
-            gameOver = true;
+        }else if (collision.gameObject.CompareTag("GroundIsland")){//Condicion que determina la victoria
+            nextStage = true; //Variable bool para ir al siguiente nivel
             audioeffects.PlayOneShot(nextLevelSound, 1.0f);//Cancion cuando se alanza el objetivo
             Debug.Log("Alcanzaste la meta");
             playerAnim.SetBool("Win_b", true);//Animacion
             playerAnim.SetInteger("WinType_int",1);
             winParticle.Play();
-            Destroy(collision.gameObject);//Se destruye el objetivo
+
+            if(nextStage == true){
+                SceneManager.LoadScene("Level2");
+                scoreManagerScript.heartCounter = 5;
+                ScoreManager.time = 150; //Más difícil, más tiempo
+                scoreManagerScript.HeartDisappear();
+            }
         }
 
-        if (collision.gameObject.CompareTag("River1") || collision.gameObject.CompareTag("River2")){
+        if (collision.gameObject.CompareTag("Construction")){  //Si entra a la zona de construcción, perderá una vida y tiempo
             resetPosition();
             scoreManagerScript.heartCounter -= 1;
+            ScoreManager.time -=5;
         }        
     }
 }

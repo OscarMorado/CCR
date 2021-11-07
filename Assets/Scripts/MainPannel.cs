@@ -81,7 +81,7 @@ public class MainPannel : MonoBehaviour
     }
 
     public void GameScene(){
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level1");
     }
 
     public void Cheat(){

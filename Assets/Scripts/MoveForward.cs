@@ -5,8 +5,8 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
     private float speed = 5.0f;
-    private float initXPos = 298.0f;
-    private float endXPos = 400.0f;
+    private float initXPos = 290.0f;
+    private float endXPos = 410.0f;
     void Start()
     {
      transform.Translate(Vector3.right*Time.deltaTime*speed);

@@ -35,7 +35,7 @@ public class SceneTransitions : MonoBehaviour
 
     public void OnFadeComplete(){
         FadeToLevel(1);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level1");
         mainPanel.SetActive(false);
         optionsPanel.SetActive(false);
         cheatPanel.SetActive(false);

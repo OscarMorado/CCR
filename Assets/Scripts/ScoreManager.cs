@@ -47,7 +47,7 @@ public class ScoreManager : MonoBehaviour
         HeartDisappear();
         Death();
     }
-    void HeartDisappear()
+    public void HeartDisappear()
     {
         if (heartCounter == 5){
             heart5.enabled = true;
@@ -99,8 +99,8 @@ public class ScoreManager : MonoBehaviour
         if(heartCounter == 0 || time == 0){
             
             SceneManager.LoadScene("Menu");
-            heartCounter = 6;
-            time = 1;
+            heartCounter = 5;
+            time = 120;
 
         }
     }
