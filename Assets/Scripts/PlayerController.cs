@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     //limits:
     private float limitZMax = -710.0f;
     private float limitZMin = -838.0f;
-    private float limitXMax = 399.0f;
-    private float limitXMin = 301.0f;
+    private float limitXMax = 369.0f;
+    private float limitXMin = 325.0f;
     public bool isOnRiver;
     public bool gameOver = false;
     public bool nextStage = false;//Booleano para determinar si se alcanzo la meta
