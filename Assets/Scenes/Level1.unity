@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 382971752}
-  m_IndirectSpecularColor: {r: 0.70184445, g: 0.780185, b: 0.7678746, a: 1}
+  m_IndirectSpecularColor: {r: 0.7018444, g: 0.7801849, b: 0.7678746, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 50e3f0d038df85b4386fed4f117c14d8, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 46b8df5836369fc4db390a16facd5eec, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f62fca6884101aa49bd8307ad7b4ddd5, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -16943,6 +16943,10 @@ PrefabInstance:
       value: TTBoyB
       objectReference: {fileID: 0}
     - target: {fileID: 1697376163950808, guid: c20158afae7a5854681c1c8c31dfed9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697376163950808, guid: c20158afae7a5854681c1c8c31dfed9b, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -20221,6 +20225,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4759262865471542, guid: 6825a3fe8a1605f42a0d0589e582ac40, type: 3}
   m_PrefabInstance: {fileID: 1299702243}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1271322083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1271322085}
+  - component: {fileID: 1271322084}
+  m_Layer: 0
+  m_Name: Character
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1271322084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271322083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ad6a62991b75840adb46f9412ecc2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefab:
+  - {fileID: 7050997310286987764, guid: 474530b37406a9e4cbd3c143fc040d2e, type: 3}
+  - {fileID: 3178592702718844479, guid: 0fc73a010fdf3eb40a6a9f828b060638, type: 3}
+  - {fileID: 1867124330089106874, guid: 09efecdb130bbc74995f4304d65d3777, type: 3}
+  - {fileID: 3215351301906489536, guid: e7fe43945b7553741b3215c69eba4045, type: 3}
+  spawnPoint: {fileID: 1271322085}
+--- !u!4 &1271322085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271322083}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 356.13583, y: 2.3132706, z: -837.8345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1284222456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28832,6 +28885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moving: {fileID: 8300000, guid: 82274152f8591564ba576a0fbdb780e0, type: 3}
   nextLevelSound: {fileID: 8300000, guid: 53769d093dae3e249b08bc4d31ec50db, type: 3}
+  playerAnim: {fileID: 0}
   winParticle: {fileID: 430399254}
   startPosition: {x: 349.0727, y: 0, z: -838.4476}
   isOnRiver: 0
@@ -28840,6 +28894,8 @@ MonoBehaviour:
   food: {fileID: 19800000, guid: 54d548b1a922d54449e2bd5424597d57, type: 3}
   death: {fileID: 19800000, guid: 234dc7ebff095244b948288a5886c5da, type: 3}
   crash: {fileID: 19800000, guid: bc0290eb454386141a1f4a4cf6a5c25b, type: 3}
+  axisX: 0
+  axisY: 0
 --- !u!82 &1848734882
 AudioSource:
   m_ObjectHideFlags: 0

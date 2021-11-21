@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip nextLevelSound;
     private Rigidbody playerRb;
     private AudioSource audioeffects;
-    private Animator playerAnim;
+    public Animator playerAnim;
     public ParticleSystem winParticle;
     private ScoreManager scoreManagerScript;//score variable
     public Vector3 startPosition;
@@ -25,9 +25,23 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem death;
     public ParticleSystem crash;
     private float lastPositionZ;
+
+    //teclas del movimiento del player
+    private bool w;//frente
+    private bool s;//atras
+    private bool a;//izquierda
+    private bool d;//derecha
+
+    //
+    
+    public float axisX;
+    public float axisY;
+
     // Start is called before the first frame update
     void Start()
     {
+        axisX=0;
+        axisY=0;
         lastPositionZ=transform.position.z;
         startPosition = new Vector3(349.0727f,0,-838.4476f);//posicion inicial del player
         transform.position=startPosition;
@@ -40,31 +54,47 @@ public class PlayerController : MonoBehaviour
    
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W) && !gameOver && transform.position.z<limitZMax){   
+        w=Input.GetKeyDown(KeyCode.W);
+        s=Input.GetKeyDown(KeyCode.S);
+        a=Input.GetKeyDown(KeyCode.A);
+        d=Input.GetKeyDown(KeyCode.D);
+
+    
+        if(w && !gameOver && transform.position.z<limitZMax){   
+            playerAnim.Play("jump");
             transform.Translate(Vector3.forward);//avanzar 1 unidad en z
             if(transform.position.z-lastPositionZ>=1){//cada que se presiona la w debe aumentar su posicion en z para sumar
                 scoreManagerScript.score+=1;
                 lastPositionZ=transform.position.z;
             }
+
             //playerAnim.SetTrigger("Jump_trig");
             audioeffects.PlayOneShot(moving, 1.0f);
-        }else if(Input.GetKeyDown(KeyCode.S) && !gameOver && transform.position.z>limitZMin){
+        }else if(s && !gameOver && transform.position.z>limitZMin){
+            playerAnim.Play("backwards");
             scoreManagerScript.score-=2; //Se le resta puntaje para que no se puedan farmear puntos
             transform.Translate(Vector3.back);
-            //playerAnim.SetTrigger("Jump_trig");
             audioeffects.PlayOneShot(moving, 1.0f);
             
-        }else if(Input.GetKeyDown(KeyCode.A) && !gameOver && transform.position.x>limitXMin){
+        }else if(a && !gameOver && transform.position.x>limitXMin){
+            playerAnim.Play("left");
             transform.Translate(Vector3.left);
-            //playerAnim.SetTrigger("Jump_trig");
             audioeffects.PlayOneShot(moving, 1.0f);
             
-        }else if(Input.GetKeyDown(KeyCode.D) && !gameOver && transform.position.x<limitXMax){
+        }else if(d && !gameOver && transform.position.x<limitXMax){
+            playerAnim.Play("right");
             transform.Translate(Vector3.right);
-            //playerAnim.SetTrigger("Jump_trig");
             audioeffects.PlayOneShot(moving, 1.0f);
         
         }
+
+        if(axisX!=0||axisY!=0){
+            Debug.Log("x: "+axisX);
+            Debug.Log("y: "+axisY);
+        }
+
+        playerAnim.SetFloat("axisX",axisX);
+        playerAnim.SetFloat("axisY",axisY);
     }
 
     public void resetPosition(){
