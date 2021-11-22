@@ -8,20 +8,28 @@ public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
     public Text timeText;
-    public int score=0;
-    public int lastScore=0;
-    public static float time=120;
+    public int score;
+    public int lastScore;
+    public static float time;
     private bool timerIsRunning=false;
+
 
     public RawImage heart1, heart2, heart3, heart4, heart5;
     public int heartCounter = 5;
     private SceneTransitions transition;
     private SceneManager manager;
+   
+    //script
+    private GameManager GameManagerScript;
+
+
     void Start()
     {
+        ResetValues(0,120.0f, 5, 0);
         timerIsRunning=true;
         scoreText.text = "SCORE: "+ score.ToString();
         timeText.text= "TIME: "+time.ToString();
+        GameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
          
     }
 
@@ -35,7 +43,7 @@ public class ScoreManager : MonoBehaviour
         }
         
         timeText.text= "TIME: " + time.ToString("f0");
-         if (timerIsRunning){
+         if (timerIsRunning && GameManagerScript.gameActive){
             if (time > 0){
                 time -= Time.deltaTime;
             }
@@ -94,13 +102,18 @@ public class ScoreManager : MonoBehaviour
         
     }
 
+    public void ResetValues(int scoreValue, float timeValue, int heartCounterValue, int lastScoreValue){
+        score=scoreValue;
+        time=timeValue;
+        heartCounter = heartCounterValue;
+        lastScore=lastScoreValue;
+    }
+
+
     public void Death(){
         
         if(heartCounter == 0 || time == 0){
-            
-            SceneManager.LoadScene("Menu");
-            heartCounter = 5;
-            time = 120;
+            GameManagerScript.gameOver=true;
 
         }
     }

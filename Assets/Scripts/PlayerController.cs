@@ -11,7 +11,12 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioeffects;
     public Animator playerAnim;
     public ParticleSystem winParticle;
+
+    //scripts
     private ScoreManager scoreManagerScript;//score variable
+     private GameManager GameManagerScript;
+
+
     public Vector3 startPosition;
     //limits:
     private float limitZMax = -710.0f;
@@ -19,7 +24,6 @@ public class PlayerController : MonoBehaviour
     private float limitXMax = 369.0f;
     private float limitXMin = 325.0f;
     public bool isOnRiver;
-    public bool gameOver = false;
     public bool nextStage = false;//Booleano para determinar si se alcanzo la meta
     public ParticleSystem food;
     public ParticleSystem death;
@@ -32,16 +36,11 @@ public class PlayerController : MonoBehaviour
     private bool a;//izquierda
     private bool d;//derecha
 
-    //
-    
-    public float axisX;
-    public float axisY;
 
     // Start is called before the first frame update
     void Start()
     {
-        axisX=0;
-        axisY=0;
+
         lastPositionZ=transform.position.z;
         startPosition = new Vector3(349.0727f,0,-838.4476f);//posicion inicial del player
         transform.position=startPosition;
@@ -49,6 +48,7 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         audioeffects = GetComponent<AudioSource>();
         scoreManagerScript = GameObject.Find("Score").GetComponent<ScoreManager>();
+        GameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
    
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         d=Input.GetKeyDown(KeyCode.D);
 
     
-        if(w && !gameOver && transform.position.z<limitZMax){   
+        if(w && GameManagerScript.gameActive && transform.position.z<limitZMax){   
             playerAnim.Play("jump");
             transform.Translate(Vector3.forward);//avanzar 1 unidad en z
             if(transform.position.z-lastPositionZ>=1){//cada que se presiona la w debe aumentar su posicion en z para sumar
@@ -70,31 +70,25 @@ public class PlayerController : MonoBehaviour
 
             //playerAnim.SetTrigger("Jump_trig");
             audioeffects.PlayOneShot(moving, 1.0f);
-        }else if(s && !gameOver && transform.position.z>limitZMin){
+        }else if(s && GameManagerScript.gameActive && transform.position.z>limitZMin){
             playerAnim.Play("backwards");
             scoreManagerScript.score-=2; //Se le resta puntaje para que no se puedan farmear puntos
             transform.Translate(Vector3.back);
             audioeffects.PlayOneShot(moving, 1.0f);
             
-        }else if(a && !gameOver && transform.position.x>limitXMin){
+        }else if(a && GameManagerScript.gameActive && transform.position.x>limitXMin){
             playerAnim.Play("left");
             transform.Translate(Vector3.left);
             audioeffects.PlayOneShot(moving, 1.0f);
             
-        }else if(d && !gameOver && transform.position.x<limitXMax){
+        }else if(d && GameManagerScript.gameActive && transform.position.x<limitXMax){
             playerAnim.Play("right");
             transform.Translate(Vector3.right);
             audioeffects.PlayOneShot(moving, 1.0f);
         
         }
 
-        if(axisX!=0||axisY!=0){
-            Debug.Log("x: "+axisX);
-            Debug.Log("y: "+axisY);
-        }
-
-        playerAnim.SetFloat("axisX",axisX);
-        playerAnim.SetFloat("axisY",axisY);
+      
     }
 
     public void resetPosition(){
@@ -115,20 +109,15 @@ public class PlayerController : MonoBehaviour
             food.Play();
             scoreManagerScript.heartCounter += 1;
             ScoreManager.time -= 3;
-        }else if (collision.gameObject.CompareTag("GroundIsland")){//Condicion que determina la victoria
-            nextStage = true; //Variable bool para ir al siguiente nivel
+        }else if (collision.gameObject.CompareTag("GoalLevel1")){//llego ala meta nivel 1
             audioeffects.PlayOneShot(nextLevelSound, 1.0f);//Cancion cuando se alanza el objetivo
-            Debug.Log("Alcanzaste la meta");
-            playerAnim.SetBool("Win_b", true);//Animacion
-            playerAnim.SetInteger("WinType_int",1);
             winParticle.Play();
-
-            if(nextStage == true){
-                SceneManager.LoadScene("Level2");
-                scoreManagerScript.heartCounter = 5;
-                ScoreManager.time = 150; //Más difícil, más tiempo
-                scoreManagerScript.HeartDisappear();
-            }
+            GameManagerScript.SetToNextLevel(true);
+        }else if (collision.gameObject.CompareTag("FinalGoal")){//llego ala meta final
+            audioeffects.PlayOneShot(nextLevelSound, 1.0f);//Cancion cuando se alanza el objetivo
+            playerAnim.Play("chikenDance");
+            winParticle.Play();
+            GameManagerScript.FinalGoal();
         }
 
         if (collision.gameObject.CompareTag("Construction")){  //Si entra a la zona de construcción, perderá una vida y tiempo

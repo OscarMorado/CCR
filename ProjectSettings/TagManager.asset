@@ -11,6 +11,8 @@ TagManager:
   - obstacle
   - Transporter
   - Construction
+  - GoalLevel1
+  - FinalGoal
   layers:
   - Default
   - TransparentFX
