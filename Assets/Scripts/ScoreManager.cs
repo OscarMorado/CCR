@@ -11,9 +11,7 @@ public class ScoreManager : MonoBehaviour
     public int score;
     public int lastScore;
     public static float time;
-    private bool timerIsRunning=false;
-
-
+    public static bool timerIsRunning=false;
     public RawImage heart1, heart2, heart3, heart4, heart5;
     public int heartCounter = 5;
     private SceneTransitions transition;
@@ -119,8 +117,4 @@ public class ScoreManager : MonoBehaviour
     }
             
 
-    IEnumerator Deathtimer(){
-        yield return new WaitForSeconds(5f*Time.deltaTime);
-        
-    }
 }
