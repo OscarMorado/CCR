@@ -13724,6 +13724,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4256327484137102, guid: b8c04fd14b199f34a802353a72a0af44, type: 3}
   m_PrefabInstance: {fileID: 730772123}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &737276007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737276008}
+  - component: {fileID: 737276011}
+  - component: {fileID: 737276010}
+  - component: {fileID: 737276009}
+  m_Layer: 0
+  m_Name: Cylinder.033 (25)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &737276008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737276007}
+  m_LocalRotation: {x: -0.4935989, y: -0.48643363, z: 0.51314557, w: 0.5063834}
+  m_LocalPosition: {x: 5.12, y: 6.67, z: -14.57}
+  m_LocalScale: {x: -0.08751349, y: -0.08751352, z: -0.087513514}
+  m_Children: []
+  m_Father: {fileID: 842815081}
+  m_RootOrder: 42
+  m_LocalEulerAnglesHint: {x: -0.039, y: -177.737, z: 90.797}
+--- !u!64 &737276009
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737276007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6987322782937720609, guid: 490056525d5d57c45b9b8131b36df530, type: 3}
+--- !u!23 &737276010
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737276007}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 4874126678125670354, guid: 490056525d5d57c45b9b8131b36df530, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &737276011
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737276007}
+  m_Mesh: {fileID: -6987322782937720609, guid: 490056525d5d57c45b9b8131b36df530, type: 3}
 --- !u!1001 &745310195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15320,6 +15416,7 @@ Transform:
   - {fileID: 981472101}
   - {fileID: 388935698}
   - {fileID: 1425625061}
+  - {fileID: 737276008}
   m_Father: {fileID: 170468124}
   m_RootOrder: 204
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38574,9 +38671,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 821665481}
     m_Modifications:
+    - target: {fileID: 2522788477500789970, guid: 06c51f51a8413654cb5f87538277b103, type: 3}
+      propertyPath: m_TagString
+      value: TPSpawnLvl1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522788478183154898, guid: 06c51f51a8413654cb5f87538277b103, type: 3}
+      propertyPath: m_TagString
+      value: TPCarplaceLvl1
+      objectReference: {fileID: 0}
     - target: {fileID: 2522788478412810565, guid: 06c51f51a8413654cb5f87538277b103, type: 3}
       propertyPath: m_Name
       value: TP_StartOxxo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522788478412810565, guid: 06c51f51a8413654cb5f87538277b103, type: 3}
+      propertyPath: m_TagString
+      value: TPOxxoLvl1
       objectReference: {fileID: 0}
     - target: {fileID: 2522788478864064306, guid: 06c51f51a8413654cb5f87538277b103, type: 3}
       propertyPath: m_Name
@@ -38585,6 +38694,10 @@ PrefabInstance:
     - target: {fileID: 2523718455178585125, guid: 06c51f51a8413654cb5f87538277b103, type: 3}
       propertyPath: m_Name
       value: TPs
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523718455178585125, guid: 06c51f51a8413654cb5f87538277b103, type: 3}
+      propertyPath: m_TagString
+      value: TPSpawnLvl1
       objectReference: {fileID: 0}
     - target: {fileID: 2523718455178585146, guid: 06c51f51a8413654cb5f87538277b103, type: 3}
       propertyPath: m_RootOrder

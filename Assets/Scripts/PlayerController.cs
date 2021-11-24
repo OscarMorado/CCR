@@ -66,10 +66,10 @@ public class PlayerController : MonoBehaviour
    
     void Update()
     {
-        w=Input.GetKeyDown(KeyCode.W);
-        s=Input.GetKeyDown(KeyCode.S);
-        a=Input.GetKeyDown(KeyCode.A);
-        d=Input.GetKeyDown(KeyCode.D);
+        w=Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow);
+        s=Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow);
+        a=Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow);
+        d=Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow);
 
     
         if(w && GameManagerScript.gameActive && transform.position.z<limitZMax){   
@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
         posz = transform.position.z;
         Debug.Log("X: " + posx);
         Debug.Log("Z: " + posz);
+
     }
 
     public void resetPosition(){
@@ -154,6 +155,30 @@ public class PlayerController : MonoBehaviour
         if (!collision.gameObject.CompareTag("GrassTrap"))
         {
             StopCoroutine(trap());
+        }
+
+        if (collision.gameObject.CompareTag("TPSpawnLvl2")){
+            transform.position = startPosition2;
+        }
+        if (collision.gameObject.CompareTag("TPCarplaceLvl2"))
+        {
+            transform.position = new Vector3(298.12f, .3118293f, -819.95f);
+        }
+        if (collision.gameObject.CompareTag("TPStoresLvl2"))
+        {
+            transform.position = new Vector3(344.12f, .3118293f, -768.79f);
+        }
+        if (collision.gameObject.CompareTag("TPSpawnLvl1"))
+        {
+            transform.position = startPosition1;
+        }
+        if (collision.gameObject.CompareTag("TPCarplaceLvl1"))
+        {
+            transform.position = new Vector3(303.46f, .3118293f, -818.95f);
+        }
+        if (collision.gameObject.CompareTag("TPOxxoLvl1"))
+        {
+            transform.position = new Vector3(399.12f, .3118293f, -746.38f);
         }
     }
 }

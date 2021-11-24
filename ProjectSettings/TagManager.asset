@@ -14,7 +14,12 @@ TagManager:
   - FinalGoal
   - GrassTrap
   - GrassTramp
-  - TP
+  - TPSpawnLvl2
+  - TPCarplaceLvl2
+  - TPStoresLvl2
+  - TPSpawnLvl1
+  - TPCarplaceLvl1
+  - TPOxxoLvl1
   layers:
   - Default
   - TransparentFX
