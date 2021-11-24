@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     Vector3 startPosition1 = new Vector3(347.13f, .03591731f, -880.5236f);
     Vector3 startPosition2 = new Vector3(349.1303f, .3118293f, -730.79f);
     //limits:
-    private float limitZMax = -710.0f;
+    private float limitZMax = -700.0f;
     private float limitZMin = -880.0f;
     private float limitXMax = 414.0f;
     private float limitXMin = 286.0f;
@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem crash;
     private float lastPositionZ;
 
+    public float posx;
+    public float posz;
     public GameObject start1;
     public GameObject start2;
     private Vector3 startPosition;
@@ -96,6 +98,10 @@ public class PlayerController : MonoBehaviour
             audioeffects.PlayOneShot(moving, 1.0f);
         
         }
+        posx = transform.position.x;
+        posz = transform.position.z;
+        Debug.Log("X: " + posx);
+        Debug.Log("Z: " + posz);
     }
 
     public void resetPosition(){
@@ -144,6 +150,10 @@ public class PlayerController : MonoBehaviour
                 ScoreManager.time -=2;
             }
         }
-        StartCoroutine(trap());  
+        StartCoroutine(trap());
+        if (!collision.gameObject.CompareTag("GrassTrap"))
+        {
+            StopCoroutine(trap());
+        }
     }
 }

@@ -13,6 +13,8 @@ TagManager:
   - Construction
   - FinalGoal
   - GrassTrap
+  - GrassTramp
+  - TP
   layers:
   - Default
   - TransparentFX
