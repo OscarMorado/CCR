@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 5961121522199026480}
   - component: {fileID: 5961121522198056150}
   - component: {fileID: 7461236035642905964}
+  - component: {fileID: 7200953085318641102}
+  - component: {fileID: 3716232291149539962}
+  - component: {fileID: 2861858369107695717}
   m_Layer: 0
   m_Name: Car_3_Blue
   m_TagString: Vehicle
@@ -27,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5961121522199874060}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 394, y: 1, z: -835.68}
+  m_LocalPosition: {x: 394, y: 0.68, z: -835.68}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 5961121522200341770}
@@ -95,9 +98,50 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5961121522199874060}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e0f2434925d6c748ace1d7c8c192ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7200953085318641102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961121522199874060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.045498952, y: 0.01358262, z: 0.021373872}
+  m_Center: {x: -0.000103079714, y: 0.0009655473, z: 4.656613e-10}
+--- !u!54 &3716232291149539962
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961121522199874060}
+  serializedVersion: 2
+  m_Mass: 200
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2861858369107695717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961121522199874060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2e8f11223002141a3c18f651c42c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5961121522200021568
