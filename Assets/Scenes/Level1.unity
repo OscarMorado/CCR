@@ -22134,6 +22134,7 @@ MonoBehaviour:
   - {fileID: 898237764950491812, guid: e4ae7722a2517a240b5112f310c66b12, type: 3}
   - {fileID: 5961121522199874060, guid: 847bbc4e24d1bd74384d0b61a9d119c9, type: 3}
   - {fileID: 2349508081695130686, guid: a13f4c7b27b68754d8eb514ed47622e3, type: 3}
+  - {fileID: 496871903370793276, guid: 941a6df56632e8d4c91312797fe55e1d, type: 3}
   twoWays: 1
 --- !u!4 &1224542850 stripped
 Transform:
