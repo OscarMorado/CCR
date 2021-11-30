@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private float limitXMax = 399.0f;
     private float limitXMin = 300.0f;
 
-    private float limitZMax2 = -702.0f;
+    private float limitZMax2 = -700.0f;
     private float limitZMin2 = -879.0f;
     private float limitXMax2 = 399.0f;
     private float limitXMin2 = 300.0f;
@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem death;
     public ParticleSystem crash;
     private float lastPositionZ;
-    private float lastPositionLvl1;
-    private float lastPositionLvl2;
+    private bool isLvl1;
+    private bool isLvl2;
 
     public float posx;
     public float posz;
@@ -59,12 +59,14 @@ public class PlayerController : MonoBehaviour
         if(scene.name == "Level1"){
             transform.position = startPosition1;
             lastPositionZ = -880.5236f;
-            lastPositionLvl1 = -880.5236f;
+            isLvl1 = true;
+            isLvl2 = false;
         }
         else if(scene.name == "Level2"){
             transform.position = startPosition2;
             lastPositionZ = -730.79f;
-            lastPositionLvl2 = -730.79f;
+            isLvl1 = false;
+            isLvl2 = true;
             transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         }
 
@@ -85,89 +87,47 @@ public class PlayerController : MonoBehaviour
         d=Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow);
 
     
-        if(w && GameManagerScript.gameActive && transform.position.z<limitZMax){   
+        if(w && GameManagerScript.gameActive && ((transform.position.z < limitZMax && isLvl1) || (transform.position.z > limitZMin2 && isLvl2))){   
             playerAnim.Play("jump");
             transform.Translate(Vector3.forward);//avanzar 1 unidad en z            
-            /*if (transform.position.z - lastPositionZ >= 1)
-            {//cada que se presiona la w debe aumentar su posicion en z para sumar
-                scoreManagerScript.score += 1;
-                lastPositionZ = transform.position.z;
-            }*/
             //LastPositionZ guarda la posición más lejana a la cual llegó el jugador
             //Con lastPositionLvl1 se verifica en qué nivel está Llv1 para el 1 y Lvl 2 para el 2
-            if (transform.position.z > lastPositionZ && lastPositionLvl1 == -880.5236f)
+            if (transform.position.z > lastPositionZ && isLvl1)
             {//cada que se presiona la w score aumenta
                 scoreManagerScript.score += 1;
                 lastPositionZ = transform.position.z;
             }
-            else if(transform.position.z < lastPositionZ && lastPositionLvl2 == -730.79f)
+            else if(transform.position.z < lastPositionZ && isLvl2)
             {//cada que se presiona la w debe aumentar su posicion en z para sumar
                 scoreManagerScript.score += 1;
                 lastPositionZ = transform.position.z;
             }
-            //scoreManagerScript.score += 1;
             audioeffects.PlayOneShot(moving, 1.0f);
-        }else if(s && GameManagerScript.gameActive && transform.position.z>limitZMin){
+        }else if(s && GameManagerScript.gameActive && ((transform.position.z>limitZMin && isLvl1) || (transform.position.z < limitZMax2 && isLvl2))){
             playerAnim.Play("backwards");
             //scoreManagerScript.score-=2; //Se le resta puntaje para que no se puedan farmear puntos
             transform.Translate(Vector3.back);
-            scoreManagerScript.score -= 2;
+            if(scoreManagerScript.score == 0){
+                scoreManagerScript.score = 0;
+            }
+            else{
+                scoreManagerScript.score -= 2;
+            }            
             audioeffects.PlayOneShot(moving, 1.0f);
             
-        }else if(a && GameManagerScript.gameActive && transform.position.x>limitXMin){
+        }else if(a && GameManagerScript.gameActive && ((transform.position.x>limitXMin && isLvl1 ) || (transform.position.x < limitXMax2 && isLvl2))){
             playerAnim.Play("left");
             transform.Translate(Vector3.left);
             audioeffects.PlayOneShot(moving, 1.0f);
             
-        }else if(d && GameManagerScript.gameActive && transform.position.x<limitXMax){
-            playerAnim.Play("right");
-            transform.Translate(Vector3.right);
-            audioeffects.PlayOneShot(moving, 1.0f);
-        
-        }else if(w && GameManagerScript.gameActive && transform.position.z>limitZMax2 && scene.name == "Level2"){   
-            playerAnim.Play("jump");
-            transform.Translate(Vector3.forward);//avanzar 1 unidad en z            
-            /*if (transform.position.z - lastPositionZ >= 1)
-            {//cada que se presiona la w debe aumentar su posicion en z para sumar
-                scoreManagerScript.score += 1;
-                lastPositionZ = transform.position.z;
-            }*/
-            //LastPositionZ guarda la posición más lejana a la cual llegó el jugador
-            //Con lastPositionLvl1 se verifica en qué nivel está Llv1 para el 1 y Lvl 2 para el 2
-            if (transform.position.z > lastPositionZ && lastPositionLvl1 == -880.5236f)
-            {//cada que se presiona la w score aumenta
-                scoreManagerScript.score += 1;
-                lastPositionZ = transform.position.z;
-            }
-            else if(transform.position.z < lastPositionZ && lastPositionLvl2 == -730.79f)
-            {//cada que se presiona la w debe aumentar su posicion en z para sumar
-                scoreManagerScript.score += 1;
-                lastPositionZ = transform.position.z;
-            }
-            //scoreManagerScript.score += 1;
-            audioeffects.PlayOneShot(moving, 1.0f);
-        }else if(s && GameManagerScript.gameActive && transform.position.z<limitZMin2 && scene.name == "Level2"){
-            playerAnim.Play("backwards");
-            //scoreManagerScript.score-=2; //Se le resta puntaje para que no se puedan farmear puntos
-            transform.Translate(Vector3.back);
-            scoreManagerScript.score -= 2;
-            audioeffects.PlayOneShot(moving, 1.0f);
-            
-        }else if(a && GameManagerScript.gameActive && transform.position.x<limitXMin2 && scene.name == "Level2" ){
-            playerAnim.Play("left");
-            transform.Translate(Vector3.left);
-            audioeffects.PlayOneShot(moving, 1.0f);
-            
-        }else if(d && GameManagerScript.gameActive && transform.position.x>limitXMax2 && scene.name == "Level2"){
+        }else if(d && GameManagerScript.gameActive && ((transform.position.x<limitXMax && isLvl1) || (transform.position.x > limitXMin2 && isLvl2))){
             playerAnim.Play("right");
             transform.Translate(Vector3.right);
             audioeffects.PlayOneShot(moving, 1.0f);
         
         }
-
-        float x = transform.position.x;
-        float z = transform.position.z;
-        Debug.Log("X: " + x + "Z: "+ z);
+        Debug.Log("Mi posición en x es" + transform.position.x);
+        Debug.Log("Mi posición en z es" + transform.position.z);
     }
 
     public void resetPosition(){
