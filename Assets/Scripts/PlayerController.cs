@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.Play("backwards");
             //scoreManagerScript.score-=2; //Se le resta puntaje para que no se puedan farmear puntos
             transform.Translate(Vector3.back);
-            if(scoreManagerScript.score == 0){
+            if(scoreManagerScript.score <= 0){
                 scoreManagerScript.score = 0;
             }
             else{
