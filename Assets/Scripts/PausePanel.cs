@@ -8,9 +8,7 @@ using UnityEngine.UI;
 public class PausePanel : MonoBehaviour
 {
     public AudioMixer mix;
-    public Slider volumeFX;
     public Slider volumeMaster;
-    public AudioSource fxSource;
     public AudioClip Button;
     public Toggle mute;
     private float lastvol;
@@ -18,8 +16,11 @@ public class PausePanel : MonoBehaviour
     public GameObject volumePanel;
     public Text remLives;
     public Text remTime;
+    private bool active;
 
-    private ScoreManager informative;
+    private ScoreManager ScoreManagerScript; 
+    private PlayerController restart; 
+  
 
     // Start is called before the first frame update
     void Start(){
@@ -32,12 +33,7 @@ public class PausePanel : MonoBehaviour
         mix.SetFloat("VolMaster", masterVol);
     }
 
-    public void ChangeFXVolume(float fxVol){
-        mix.SetFloat("VolFX", fxVol);
-    }
-
     private void Awake(){
-        volumeFX.onValueChanged.AddListener(ChangeFXVolume);
         volumeMaster.onValueChanged.AddListener(ChangeMasterVolume);
     }
 
@@ -50,24 +46,37 @@ public class PausePanel : MonoBehaviour
         }
     }
 
-    public void PlaySoundButton(){
-        fxSource.PlayOneShot(Button);
-    }
-
     public void ButtonExit(){
         SceneManager.LoadScene("Menu");
     }
 
     public void ButtonVolume(){
         volumePanel.SetActive(true);
+        pausePanel.SetActive(false);
+    }
+
+    public void StartPanel(){
+        pausePanel.SetActive(true);
+        volumePanel.SetActive(false);
     }
 
     public void ButtonRestart(){
-
+        ScoreManagerScript = GameObject.FindGameObjectWithTag("ButtonB").GetComponent<ScoreManager>();
+        restart = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        ScoreManagerScript.ResetValues(0,120.0f, 5, 0);
+        //restart.resetPosition();
     }
 
     public void Information(){
-        remLives.text = "Lives: " + informative.heartCounter;
-        remTime.text =  "Time: " + ScoreManager.time;
+        remLives.text = "Lives: " + ScoreManagerScript.heartCounter.ToString();
+        remTime.text =  "Time: " + ScoreManager.time.ToString();
+    }
+
+    public void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            active = !active;
+            pausePanel.SetActive(active);
+            Time.timeScale = 0;
+        }
     }
 }

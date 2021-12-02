@@ -13,13 +13,14 @@ TagManager:
   - Construction
   - FinalGoal
   - GrassTrap
-  - GrassTramp
   - TPSpawnLvl2
   - TPCarplaceLvl2
   - TPStoresLvl2
   - TPSpawnLvl1
   - TPCarplaceLvl1
   - TPOxxoLvl1
+  - ButtonA
+  - ButtonB
   layers:
   - Default
   - TransparentFX

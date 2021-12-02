@@ -78,7 +78,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -178,13 +178,13 @@ MonoBehaviour:
   nextLevelSound: {fileID: 8300000, guid: 53769d093dae3e249b08bc4d31ec50db, type: 3}
   playerAnim: {fileID: 7050997310286987771}
   winParticle: {fileID: 4212237911574779970, guid: f34d53a9f8cd409428b8d1e3addf4807, type: 3}
-  startPosition1: {x: 0, y: 0, z: 0}
-  startPosition2: {x: 0, y: 0, z: 0}
   isOnRiver: 0
   nextStage: 0
   food: {fileID: 19800000, guid: 54d548b1a922d54449e2bd5424597d57, type: 3}
   death: {fileID: 19800000, guid: 234dc7ebff095244b948288a5886c5da, type: 3}
   crash: {fileID: 19800000, guid: bc0290eb454386141a1f4a4cf6a5c25b, type: 3}
+  posx: 0
+  posz: 0
   start1: {fileID: 1635861370420699200, guid: 9f790f5ca20f3e340918e5edf6c14978, type: 3}
   start2: {fileID: 510139048291283033, guid: 35a53fbea773fc049ad138db994ecbbe, type: 3}
 --- !u!95 &7050997310286987771

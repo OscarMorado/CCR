@@ -21,10 +21,10 @@ public class MainPannel : MonoBehaviour
     public GameObject mainPanel;
     public GameObject cheatPanel;
     public GameObject instrPanel;
+    public GameObject creditsPanel;
     private string input;
     public InputField holder;
 
-    public GameObject aux;
     public Text text;
 
     public GameObject movpanel;
@@ -33,7 +33,6 @@ public class MainPannel : MonoBehaviour
     public GameObject goalpanel;
     public GameObject goalpanel2;
     public GameObject goalpanel3;
-    
     
 
     
@@ -52,6 +51,7 @@ public class MainPannel : MonoBehaviour
         optionsPanel.SetActive(false);
         cheatPanel.SetActive(false);
         instrPanel.SetActive(false);
+        creditsPanel.SetActive(false);
     }
 
     public void ChangeMasterVolume(float masterVol){
@@ -90,14 +90,27 @@ public class MainPannel : MonoBehaviour
         PlaySoundButton();
     }
 
+    public void Credits(){
+        creditsPanel.SetActive(true);
+        mainPanel.SetActive(false);
+        PlaySoundButton();
+
+    }
+
     public void ExitGame(){
         Application.Quit();
     }
 
     public void CheatCode(string cheat){
+        Scene scene = SceneManager.GetActiveScene();
         if(holder.text == "Cascadia"){
             fxSource.PlayOneShot(Acceptance);
-            ScoreManager.time += 30;
+            if(scene.name == "Level1"){
+                ScoreManager.time += 30;
+            }else if(scene.name == "Level2"){
+                ScoreManager.time += 20;
+            }
+            
             text.enabled = true;
             text.text = "Cheat code accepted!";
         }else{

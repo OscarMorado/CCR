@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem winParticle;
     //scripts
     private ScoreManager scoreManagerScript;//score variable
-     private GameManager GameManagerScript;
+    private GameManager GameManagerScript;
 
 
     Vector3 startPosition1 = new Vector3(347.13f, .03591731f, -880.5236f);
@@ -80,7 +80,6 @@ public class PlayerController : MonoBehaviour
    
     void Update()
     {
-        Scene scene = SceneManager.GetActiveScene();
         w=Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow);
         s=Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow);
         a=Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow);
