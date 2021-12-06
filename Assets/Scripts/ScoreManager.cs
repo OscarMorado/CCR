@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
     public static float time;
     public static bool timerIsRunning=false;
     public RawImage heart1, heart2, heart3, heart4, heart5;
+    //public Animator playerAnim;
     public int heartCounter = 5;
     private SceneTransitions transition;
     private SceneManager manager;
@@ -112,6 +113,7 @@ public class ScoreManager : MonoBehaviour
         
         if(heartCounter == 0 || time == 0){
             GameManagerScript.gameOver=true;
+            //playerAnim.Play("death");
 
         }
     }

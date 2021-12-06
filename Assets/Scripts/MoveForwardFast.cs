@@ -7,6 +7,7 @@ public class MoveForwardFast : MonoBehaviour
     private float speed = 19.0f;
     private float initXPos = 290.0f;
     private float endXPos = 410.0f;
+    public AudioClip movingSound;
     void Start()
     {
         transform.Translate(Vector3.right * Time.deltaTime * speed);

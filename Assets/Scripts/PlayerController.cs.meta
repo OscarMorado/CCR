@@ -3,7 +3,17 @@ guid: e509ba989dd2c004594b68ddf45b716c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - moving: {instanceID: 0}
+  - nextLevelSound: {instanceID: 0}
+  - foodSound: {instanceID: 0}
+  - playerAnim: {instanceID: 0}
+  - winParticle: {instanceID: 0}
+  - food: {instanceID: 0}
+  - death: {instanceID: 0}
+  - crash: {instanceID: 0}
+  - start1: {instanceID: 0}
+  - start2: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
