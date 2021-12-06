@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moving: {fileID: 8300000, guid: 82274152f8591564ba576a0fbdb780e0, type: 3}
   nextLevelSound: {fileID: 8300000, guid: 53769d093dae3e249b08bc4d31ec50db, type: 3}
+  foodSound: {fileID: 8300000, guid: 107e1c009445ac145925c8fd5bc6171e, type: 3}
   playerAnim: {fileID: 2525257229236486531}
   winParticle: {fileID: 4212237911574779970, guid: f34d53a9f8cd409428b8d1e3addf4807, type: 3}
   isOnRiver: 0

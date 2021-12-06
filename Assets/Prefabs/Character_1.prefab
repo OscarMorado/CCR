@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moving: {fileID: 8300000, guid: 82274152f8591564ba576a0fbdb780e0, type: 3}
   nextLevelSound: {fileID: 8300000, guid: 53769d093dae3e249b08bc4d31ec50db, type: 3}
+  foodSound: {fileID: 8300000, guid: 107e1c009445ac145925c8fd5bc6171e, type: 3}
   playerAnim: {fileID: 7050997310286987771}
   winParticle: {fileID: 4212237911574779970, guid: f34d53a9f8cd409428b8d1e3addf4807, type: 3}
   isOnRiver: 0
@@ -360,6 +361,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b397a54ecb608b8478a770ed12159334, type: 2}
+    - target: {fileID: 7322279897022366757, guid: fe520ce6663e67348a964bf7b4318e26, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: fe520ce6663e67348a964bf7b4318e26, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fe520ce6663e67348a964bf7b4318e26, type: 3}

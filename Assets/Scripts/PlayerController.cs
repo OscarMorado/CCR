@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public AudioClip moving;
     public AudioClip nextLevelSound;
+    public AudioClip foodSound;
     private Rigidbody playerRb;
     private AudioSource audioeffects;
     public Animator playerAnim;
@@ -125,8 +126,8 @@ public class PlayerController : MonoBehaviour
             audioeffects.PlayOneShot(moving, 1.0f);
         
         }
-        Debug.Log("Mi posición en x es" + transform.position.x);
-        Debug.Log("Mi posición en z es" + transform.position.z);
+        //Debug.Log("Mi posición en x es" + transform.position.x);
+        //Debug.Log("Mi posición en z es" + transform.position.z);
     }
 
     public void resetPosition(){
@@ -140,21 +141,37 @@ public class PlayerController : MonoBehaviour
         }
         lastPositionZ = transform.position.z;
     }
+   /* IEnumerator waiter()
+    {
+        yield return new WaitForSecondsRealtime(4);
+        StartCoroutine(waiter());
+    }*/
 
     private void OnCollisionEnter(Collision collision){
         Scene scene = SceneManager.GetActiveScene();
         if(collision.gameObject.CompareTag("Vehicle")){
-            crash.Play();
-            resetPosition();
             scoreManagerScript.heartCounter -= 1;
+            if(scoreManagerScript.heartCounter == 0)
+            {
+                Debug.Log("No tienes vida");
+                playerAnim.Play("Dead");
+            }
+            if(scoreManagerScript.heartCounter >= 1)
+            {
+                crash.Play();
+                playerAnim.Play("Defeat");
+                resetPosition();
+            }
             //Si la vida llega a 0, que el jugador desaparezca, no hay animación de muerte
         }else if(collision.gameObject.CompareTag("Food")){
+            //Colision con Food.
             Destroy(collision.gameObject);
-            food.Play();
+            audioeffects.PlayOneShot(foodSound, 1.0f); //Cancion cuando se alanza el objetivo
             scoreManagerScript.heartCounter += 1;
             ScoreManager.time -= 3;
         }else if (collision.gameObject.CompareTag("GroundIsland") && scene.name == "Level1"){ //llego a la meta nivel 1
             audioeffects.PlayOneShot(nextLevelSound, 1.0f); //Cancion cuando se alanza el objetivo
+            playerAnim.Play("chikenDance");
             winParticle.Play();
             GameManagerScript.SetToNextLevel(true);
         }else if (collision.gameObject.CompareTag("FinalGoal") && scene.name == "Level2"){ //llego a la meta final
@@ -165,6 +182,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (collision.gameObject.CompareTag("Construction") || collision.gameObject.CompareTag("GrassTrap")){  //Si entra a la zona de construcción, perderá una vida y tiempo
+            playerAnim.Play("Defeat");
             resetPosition();
             scoreManagerScript.heartCounter -= 1;
             ScoreManager.time -=5;
