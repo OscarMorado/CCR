@@ -76,7 +76,13 @@ public class PausePanel : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)){
             active = !active;
             pausePanel.SetActive(active);
-            Time.timeScale = 0;
+            Debug.Log("State: " + active);
+            if(!active){
+                Time.timeScale = 1;
+            }else{
+                Time.timeScale = 0;
+            }
+            
         }
     }
 }

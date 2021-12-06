@@ -14,6 +14,7 @@ public class MainPannel : MonoBehaviour
     public AudioClip Button;
     public AudioClip Acceptance;
     public AudioClip Inexistent;
+    public Animator menuanim;
     public Toggle mute;
     private float lastvol;
     [Header("Panels")]
@@ -42,6 +43,7 @@ public class MainPannel : MonoBehaviour
         optionsPanel.SetActive(false);
         cheatPanel.SetActive(false);
         instrPanel.SetActive(false);
+        creditsPanel.SetActive(false);
         panel.SetActive(true);
         PlaySoundButton();
         text.enabled = false;
@@ -94,7 +96,7 @@ public class MainPannel : MonoBehaviour
         creditsPanel.SetActive(true);
         mainPanel.SetActive(false);
         PlaySoundButton();
-
+        menuanim.Play("Credits", -1, 0f);
     }
 
     public void ExitGame(){
@@ -105,11 +107,10 @@ public class MainPannel : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         if(holder.text == "Cascadia"){
             fxSource.PlayOneShot(Acceptance);
-            if(scene.name == "Level1"){
-                ScoreManager.time += 30;
-            }else if(scene.name == "Level2"){
-                ScoreManager.time += 20;
-            }
+
+            
+                ScoreManager.time += 400;
+            
             
             text.enabled = true;
             text.text = "Cheat code accepted!";
