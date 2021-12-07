@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.61298895, g: 0.692407, b: 0.74531686, a: 1}
+  m_IndirectSpecularColor: {r: 0.61361575, g: 0.6927794, b: 0.7456206, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1489,7 +1489,7 @@ PrefabInstance:
       value: "Credits\nMorado Torres Oscar \n(Skynotelink)\n\n\n\n\n\n\n\nBravo Rotuno
         Enrique\n(Rotunno17)\n\n\n\n\n\n\n\nEspiricueta Barr\xF3n Jos\xE9\n(Pandha11)\n\n\n\n\n\n\n\nRodr\xEDguez
         Hurtado Luis\n(MachoScrub S2)\n\n\n\n\n\n\n\nJim\xE9nez Coronado V\xEDctor
-        \n(eljugos)\n\n\n\n\n\n\n\nMart\xEDnez Manuel Alejandro\n(Alex18)\n\n\n\n\n\n\n"
+        \n(eljugos)\n\n\n\n\n\nMart\xEDnez Manuel Alejandro\n(Alex18)\n\n\n\n\n\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 1560255553537065865, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_Sprite
@@ -1601,7 +1601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805984491273554272, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00004005432
+      value: 0.00003886223
       objectReference: {fileID: 0}
     - target: {fileID: 1805984491273554273, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_Text
@@ -1742,7 +1742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805984491670446025, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 150.08075
+      value: 150.08078
       objectReference: {fileID: 0}
     - target: {fileID: 1805984491670446026, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_Text
@@ -1904,7 +1904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492071922848, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 198.73987
+      value: 198.7399
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492071922849, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_Text
@@ -2039,7 +2039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492376674717, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 267.20233
+      value: 267.2024
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492376674718, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_Text
@@ -2114,7 +2114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492457600880, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000032424927
+      value: 0.00006175041
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492457600881, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_Text
@@ -2239,7 +2239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492684161503, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000032424927
+      value: 0.00006175041
       objectReference: {fileID: 0}
     - target: {fileID: 1805984492716938933, guid: 80ee5b01ef98c6147b9f5e2c3ae7a454, type: 3}
       propertyPath: m_AnchorMax.x

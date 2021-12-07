@@ -32,7 +32,9 @@ public class GameManager : MonoBehaviour
 
         if(gameOver){
             gameActive=false;
+            ScoreManagerScript.isSober = true;
             GameOverPanel.SetActive(true);
+            
         }
 
 
