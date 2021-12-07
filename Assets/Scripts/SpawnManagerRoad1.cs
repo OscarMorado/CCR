@@ -7,9 +7,9 @@ public class SpawnManagerRoad1 : MonoBehaviour
     public GameObject[] auto;
     public bool twoWays=true;
     private int minTime = 2;
-    private int maxTime = 3;
-    private float spaceBetweenCars=4.0f;//space between cars
-    private float diffPosX = 110;//difference between initial and last position.
+    private int maxTime = 4;
+    public float spaceBetweenCars=4.0f;//space between cars
+    private float diffPosX = 120;//difference between initial and last position.
 
     
 

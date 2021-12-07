@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-
 public class PausePanel : MonoBehaviour
 {
     public AudioMixer mix;
@@ -17,7 +16,8 @@ public class PausePanel : MonoBehaviour
     public Text remLives;
     public Text remTime;
     private bool active;
-
+    private bool isLvl1;
+    private bool isLvl2;
     private ScoreManager ScoreManagerScript; 
     private PlayerController restart; 
   
@@ -26,7 +26,15 @@ public class PausePanel : MonoBehaviour
     void Start(){
         pausePanel.SetActive(false);
         volumePanel.SetActive(false);
-        
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "Level1"){            
+            isLvl1 = true;
+            isLvl2 = false;
+        }
+        else if(scene.name == "Level2"){
+            isLvl1 = false;
+            isLvl2 = true;
+        }
     }
 
     public void ChangeMasterVolume(float masterVol){
@@ -61,15 +69,17 @@ public class PausePanel : MonoBehaviour
     }
 
     public void ButtonRestart(){
-        ScoreManagerScript = GameObject.FindGameObjectWithTag("ButtonB").GetComponent<ScoreManager>();
-        restart = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        /*ScoreManagerScript = GameObject.FindGameObjectWithTag("ButtonB").GetComponent<ScoreManager>();
+        restart = GameObject.Find("Character").GetComponent<PlayerController>();
         ScoreManagerScript.ResetValues(0,120.0f, 5, 0);
-        restart.resetPosition();
-        if(!active){
-                Time.timeScale = 1;
-        }else{
-                Time.timeScale = 0;
+        restart.resetPosition();*/
+        if(isLvl1){
+            SceneManager.LoadScene("Level1");
+        }else if (isLvl2){
+            SceneManager.LoadScene("Level2");
         }
+        
+        Time.timeScale = 1;
     }
 
     public void Information(){

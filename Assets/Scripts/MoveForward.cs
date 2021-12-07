@@ -11,7 +11,7 @@ public class MoveForward : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * speed);
         int selectedCharachter = PlayerPrefs.GetInt("selectedCharacter");
-        speed += (selectedCharachter + 1) * 5;
+        speed += (selectedCharachter + 1) * 7;
         Debug.Log("Velocidad: " + speed);
     }
 

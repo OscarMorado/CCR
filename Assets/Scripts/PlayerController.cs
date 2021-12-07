@@ -158,9 +158,18 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision){
         Scene scene = SceneManager.GetActiveScene();
         if(collision.gameObject.CompareTag("Vehicle")){
-            crash.Play();
-            resetPosition();
             scoreManagerScript.heartCounter -= 1;
+            if(scoreManagerScript.heartCounter == 0)
+            {
+                Debug.Log("No tienes vida");
+                playerAnim.Play("Dead");
+            }
+            if(scoreManagerScript.heartCounter >= 1)
+            {
+                crash.Play();
+                playerAnim.Play("Defeat");
+                resetPosition();
+            }
             //Si la vida llega a 0, que el jugador desaparezca, no hay animación de muerte
         }else if(collision.gameObject.CompareTag("Food")){
             Destroy(collision.gameObject);
@@ -187,6 +196,8 @@ public class PlayerController : MonoBehaviour
             scoreManagerScript.heartCounter -= 1;
             ScoreManager.time -=5;
         }
+
+
 
         if (collision.gameObject.CompareTag("TPSpawnLvl2")){
             transform.position = startPosition2;

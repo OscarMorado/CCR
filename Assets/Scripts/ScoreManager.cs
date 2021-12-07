@@ -26,8 +26,16 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        drunkPanel.SetActive(false);
         ResetValues(0,120.0f, 5, 0);
+        int cheatcode = PlayerPrefs.GetInt("cheatcode");
+
+        if(cheatcode == 1 ){
+            time += 30;
+            PlayerPrefs.SetInt("cheatcode", 0);
+        }
+
+
+        drunkPanel.SetActive(false);
         timerIsRunning=true;
         scoreText.text = "SCORE: "+ score.ToString();
         state.text = "Sober ";

@@ -9,13 +9,13 @@ public class SpawnManagerFast : MonoBehaviour
     private int minTime = 1;
     private int maxTime = 4;
     private float spaceBetweenCars = 4.0f;//space between cars
-    private float diffPosX = 82;//difference between initial and last position.
+    private float diffPosX = 120;//difference between initial and last position.
 
 
 
     void Start()
     {
-        Vector3 spawn = new Vector3(transform.position.x - 15, transform.position.y - 1.6f, transform.position.z);
+        Vector3 spawn = new Vector3(transform.position.x - 30, transform.position.y - 1.6f, transform.position.z);
         StartCoroutine(ToLeft());//left road
         StartCoroutine(ToRight(spawn));//right road
 
