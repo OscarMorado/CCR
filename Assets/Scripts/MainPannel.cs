@@ -107,10 +107,7 @@ public class MainPannel : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         if(holder.text == "Cascadia"){
             fxSource.PlayOneShot(Acceptance);
-
-            
-                ScoreManager.time += 400;
-            
+            PlayerPrefs.SetInt("cheatcode", 1);
             
             text.enabled = true;
             text.text = "Cheat code accepted!";

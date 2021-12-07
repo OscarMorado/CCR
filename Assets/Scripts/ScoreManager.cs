@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
     public Text timeText;
-    public int score;
+    public int score=0;
     public int lastScore;
     public static float time;
     public static bool timerIsRunning=false;
@@ -25,6 +25,11 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         ResetValues(0,120.0f, 5, 0);
+        if(PlayerPrefs.GetInt("cheatcode")==1){
+            score+=400;
+            PlayerPrefs.SetInt("cheatcode",0);
+
+        }
         timerIsRunning=true;
         scoreText.text = "SCORE: "+ score.ToString();
         timeText.text= "TIME: "+time.ToString();
