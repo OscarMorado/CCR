@@ -62,6 +62,7 @@ public class PausePanel : MonoBehaviour
 
     public void ButtonRestart(){
         ScoreManagerScript = GameObject.FindGameObjectWithTag("ButtonB").GetComponent<ScoreManager>();
+        Time.timeScale = 1;
         restart = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         ScoreManagerScript.ResetValues(0,120.0f, 5, 0);
         //restart.resetPosition();
