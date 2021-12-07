@@ -8,12 +8,14 @@ public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
     public Text timeText;
-    public int score=0;
+    public Text state; //State
+    public bool isSober=true;
+    public int score;
     public int lastScore;
+    public GameObject drunkPanel;
     public static float time;
     public static bool timerIsRunning=false;
     public RawImage heart1, heart2, heart3, heart4, heart5;
-    //public Animator playerAnim;
     public int heartCounter = 5;
     private SceneTransitions transition;
     private SceneManager manager;
@@ -24,14 +26,11 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        drunkPanel.SetActive(false);
         ResetValues(0,120.0f, 5, 0);
-        if(PlayerPrefs.GetInt("cheatcode")==1){
-            score+=400;
-            PlayerPrefs.SetInt("cheatcode",0);
-
-        }
         timerIsRunning=true;
         scoreText.text = "SCORE: "+ score.ToString();
+        state.text = "Sober ";
         timeText.text= "TIME: "+time.ToString();
         GameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
          
@@ -55,6 +54,16 @@ public class ScoreManager : MonoBehaviour
                 time=0;
                 timerIsRunning = false;
             }
+        }
+        if (isSober)
+        {
+            state.text = "Sober";
+            drunkPanel.SetActive(false);
+        }
+        else
+        {
+            state.text = "Drunk";
+            drunkPanel.SetActive(true);
         }
         HeartDisappear();
         Death();
@@ -118,7 +127,6 @@ public class ScoreManager : MonoBehaviour
         
         if(heartCounter == 0 || time == 0){
             GameManagerScript.gameOver=true;
-            //playerAnim.Play("death");
 
         }
     }

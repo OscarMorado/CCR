@@ -6,16 +6,16 @@ public class SpawnManagerRoad1 : MonoBehaviour
 {
     public GameObject[] auto;
     public bool twoWays=true;
-    private int minTime = 3;
-    private int maxTime = 9;
+    private int minTime = 1;
+    private int maxTime = 3;
     private float spaceBetweenCars=4.0f;//space between cars
-    private float diffPosX = 82;//difference between initial and last position.
+    private float diffPosX = 110;//difference between initial and last position.
 
     
 
     void Start()
     {
-        Vector3 spawn = new Vector3(transform.position.x-15, transform.position.y-1.6f, transform.position.z);
+        Vector3 spawn = new Vector3(transform.position.x-35, transform.position.y-1.6f, transform.position.z);
         StartCoroutine(ToLeft());//left road
         StartCoroutine(ToRight(spawn));//right road
         

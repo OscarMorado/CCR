@@ -21,6 +21,7 @@ TagManager:
   - TPOxxoLvl1
   - ButtonA
   - ButtonB
+  - Beer
   layers:
   - Default
   - TransparentFX

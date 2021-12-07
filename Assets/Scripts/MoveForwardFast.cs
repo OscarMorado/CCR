@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveForwardFast : MonoBehaviour
 {
-    private float speed = 19.0f;
+    private float speed = 50.0f;
     private float initXPos = 290.0f;
     private float endXPos = 410.0f;
     public AudioClip movingSound;
@@ -16,7 +16,7 @@ public class MoveForwardFast : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * Time.deltaTime * speed);
-        if (transform.position.x > endXPos || transform.position.x < initXPos)
+        if (transform.position.y < -1)
         {//cuando se sale del rango del mapa
             Destroy(gameObject);
         }
