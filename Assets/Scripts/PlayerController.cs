@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -43,20 +44,28 @@ public class PlayerController : MonoBehaviour
     public GameObject start1;
     public GameObject start2;
     private Vector3 startPosition;
-    
 
-    //teclas del movimiento del player
+
+    //teclas del movimiento del player    
     private bool w;//frente
     private bool s;//atras
     private bool a;//izquierda
     private bool d;//derecha
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        GameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerRb = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
+        audioeffects = GetComponent<AudioSource>();
+        scoreManagerScript = GameObject.Find("Score").GetComponent<ScoreManager>();
+
         Scene scene = SceneManager.GetActiveScene();
+        scoreManagerScript.isSober = true;
         //lastPositionZ=transform.position.z;
-        if(scene.name == "Level1"){
+        if (scene.name == "Level1"){            
             transform.position = startPosition1;
             lastPositionZ = -880.5236f;
             isLvl1 = true;
@@ -70,20 +79,27 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         }
 
-        playerRb = GetComponent<Rigidbody>();
-        playerAnim = GetComponent<Animator>();
-        audioeffects = GetComponent<AudioSource>();
-        scoreManagerScript = GameObject.Find("Score").GetComponent<ScoreManager>();
-        GameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
     }
 
    
     void Update()
     {
-        w=Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow);
-        s=Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow);
-        a=Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow);
-        d=Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow);
+        if (scoreManagerScript.isSober)
+        {
+            w = Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow);
+            s = Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow);
+            a = Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow);
+            d = Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow);
+        }
+        else
+        {
+            s = Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow);
+            w = Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow);
+            d = Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow);
+            a = Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow);
+        }
+        
 
     
         if(w && GameManagerScript.gameActive && ((transform.position.z < limitZMax && isLvl1) || (transform.position.z > limitZMin2 && isLvl2))){   
@@ -125,8 +141,6 @@ public class PlayerController : MonoBehaviour
             audioeffects.PlayOneShot(moving, 1.0f);
         
         }
-        Debug.Log("Mi posición en x es" + transform.position.x);
-        Debug.Log("Mi posición en z es" + transform.position.z);
     }
 
     public void resetPosition(){
@@ -152,6 +166,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             food.Play();
             scoreManagerScript.heartCounter += 1;
+            scoreManagerScript.isSober = true;
             ScoreManager.time -= 3;
         }else if (collision.gameObject.CompareTag("GroundIsland") && scene.name == "Level1"){ //llego a la meta nivel 1
             audioeffects.PlayOneShot(nextLevelSound, 1.0f); //Cancion cuando se alanza el objetivo
@@ -162,6 +177,9 @@ public class PlayerController : MonoBehaviour
             playerAnim.Play("chikenDance");
             winParticle.Play();
             GameManagerScript.FinalGoal();
+        }else if (collision.gameObject.CompareTag("Beer")){            
+            scoreManagerScript.isSober = false;
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("Construction") || collision.gameObject.CompareTag("GrassTrap")){  //Si entra a la zona de construcción, perderá una vida y tiempo

@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 496871903373294604}
   - component: {fileID: 6045390907146203729}
   - component: {fileID: -1560605152335849097}
+  - component: {fileID: -3077606722753113515}
   m_Layer: 0
   m_Name: Truck_2_Blue
   m_TagString: Vehicle
@@ -679,6 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0f2434925d6c748ace1d7c8c192ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
 --- !u!114 &-1560605152335849097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,6 +693,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2e8f11223002141a3c18f651c42c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-3077606722753113515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496871903370793276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0803933, y: 0.030644886, z: 0.02936099}
+  m_Center: {x: 0.0026170518, y: -0.00023395056, z: 0}
 --- !u!1 &496871903370816164
 GameObject:
   m_ObjectHideFlags: 0
